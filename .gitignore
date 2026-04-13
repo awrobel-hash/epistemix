@@ -1,0 +1,10 @@
+# Python
+__pycache__/
+*.pyc
+*.egg-info/
+dist/
+build/
+.venv/
+
+# Epistemix runtime (per-project, not for the package repo itself)
+.epistemix/

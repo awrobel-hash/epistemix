@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "epistemix"
+version = "0.1.0"
+description = "Epistemic verification for Claude Code — active understanding check before implementation"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Your Name" }]
+keywords = ["claude", "ai", "agents", "epistemic", "verification"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.10",
+]
+dependencies = []  # zero external deps — uses only stdlib
+
+[project.scripts]
+epistemix = "epistemix.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["epistemix*"]
+
+[tool.setuptools.package-data]
+epistemix = ["templates/*"]
