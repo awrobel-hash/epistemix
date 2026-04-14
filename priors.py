@@ -126,7 +126,8 @@ def calibration_report(conn: sqlite3.Connection) -> dict:
 
     buckets: dict[str, list] = {}
     for row in rows:
-        bucket = f"{int(row['predicted_confidence'] * 10) * 10}-{int(row['predicted_confidence'] * 10) * 10 + 10}%"
+        confidence = min(row['predicted_confidence'], 0.9999)
+        bucket = f"{int(confidence * 10) * 10}-{int(confidence * 10) * 10 + 10}%"
         if bucket not in buckets:
             buckets[bucket] = []
         buckets[bucket].append(row["actual_success"])

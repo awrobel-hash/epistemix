@@ -13,7 +13,10 @@ import math
 from pathlib import Path
 from dataclasses import dataclass, field
 
-from type_graph import build_type_graph, TypeGraph
+try:
+    from .type_graph import build_type_graph, TypeGraph
+except ImportError:
+    from type_graph import build_type_graph, TypeGraph  # type: ignore[no-redef]
 
 
 SKIP_DIRS = {

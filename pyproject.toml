@@ -22,9 +22,11 @@ dependencies = []  # zero external deps — uses only stdlib
 [project.scripts]
 epistemix = "epistemix.cli:main"
 
-[tool.setuptools.packages.find]
-where = ["."]
-include = ["epistemix*"]
+[tool.setuptools]
+packages = ["epistemix"]
+
+[tool.setuptools.package-dir]
+"epistemix" = "."
 
 [tool.setuptools.package-data]
 epistemix = ["templates/*"]
